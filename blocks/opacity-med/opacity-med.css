@@ -1,0 +1,8 @@
+.opacity-med {
+    opacity: 1;
+    transition: opacity 1s ease-in-out 0s;
+}
+
+.opacity-med:hover {
+    opacity: 0.6;
+}

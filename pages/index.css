@@ -29,3 +29,6 @@
 @import '../blocks/input/__text/_type_name/input__text_type_name.css';
 @import '../blocks/input/__text/_type_occupation/input__text_type_occupation.css';
 @import '../blocks/input/__line/input__line.css';
+@import '../blocks/opacity-med/opacity-med.css';
+@import '../blocks/opacity-weak/opacity-weak.css';
+@import '../blocks/opacity-strong/opacity-strong.css';
