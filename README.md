@@ -17,10 +17,8 @@
 
 **Github**
 
-* [Link to my project on Github](https://phoenix801.github.io/web_project_3/)
+* [Link to my project on Github](https://phoenix801.github.io/web_project_4/)
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
+![Around The U.S - Sprint 4 Desktop + Mobile](https://github.com/Phoenix801/web_project_4/blob/main/images/Sprint%204_%20Around%20The%20U.S.%20_%20desktop%20%2B%20mobile.png)
