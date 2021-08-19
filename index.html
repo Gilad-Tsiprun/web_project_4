@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Around The U.S</title>
+        <link rel="stylesheet" href="./pages/index.css">
+    </head>
+    <body class="page">  
+        <header class="header">
+            <img src="./images/logo.png" class="logo" alt="Around the U.S Logo">
+            <hr class="line">
+        </header>
+            <main class="main">
+            <section class="profile">
+                <div class="avatar"></div>
+                <div class="profile-info">
+                    <p class="profile-info__full-name">Jacques Cousteau</p>
+                    <button class="profile-info__edit"></button>
+                    <div class="break"></div>
+                    <p class="profile-info__occupation">Explorer</p>
+                </div>
+                <button class="add"></button>
+            </section>
+
+            <section class="elements">
+                <ul class="elements__list">
+                    <li class="element">
+                        <img src="images/kirill-pershin-1.png" class="element__image" alt="element image 1">
+                        <p class="element__text">Yosemite Valley</p>
+                        <button class="element__like"></button>
+                    </li>
+                    <li class="element">
+                        <img src="images/kirill-pershin-2.png" class="element__image" alt="element image 2">
+                        <p class="element__text">Lake Louise</p>
+                        <button class="element__like"></button>
+                    </li>
+                    <li class="element">
+                        <img src="images/kirill-pershin-3.png" class="element__image" alt="element image 3">
+                        <p class="element__text">Bald Mountains</p>
+                        <button class="element__like"></button>
+                    </li>
+                    <li class="element">
+                        <img src="images/kirill-pershin-4.png" class="element__image" alt="element image 4">
+                        <p class="element__text">Latemar</p>
+                        <button class="element__like"></button>
+                    </li>
+                    <li class="element">
+                        <img src="images/kirill-pershin-5.png" class="element__image" alt="element image 5">
+                        <p class="element__text">Vanoise National Park</p>
+                        <button class="element__like"></button>
+                    </li>
+                    <li class="element">
+                        <img src="images/kirill-pershin-6.png" class="element__image" alt="element image 6">
+                        <p class="element__text">Lago di Braies</p>
+                        <button class="element__like"></button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        
+        <div class="popup-box">
+            <button class="popup-box__btn popup-box__btn_action_close"></button>
+            <p class="popup-box__title">Edit Profile</p>
+            <div class="input">
+                <input type="text" placeholder="Name" class="input__text input__text_type_name">
+                <hr class="input__line">
+                <input type="text" placeholder="About Me" class="input__text input__text_type_occupation">
+                <hr class="input__line">
+                <button class="popup-box__btn popup-box__btn_action_edit">
+                    Save
+                </button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
+        </footer>
+
+        <script src="./scripts.js"></script>
+    </body>
+</html>

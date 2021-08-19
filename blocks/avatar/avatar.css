@@ -1,0 +1,26 @@
+.avatar {
+    position: relative;
+    margin: 0 0 0 -22.5px;
+    z-index: 0;
+    width: 168.75px;
+    height: 127.5px;
+}
+
+@media screen and (max-width: 980px) {
+    .avatar {
+        margin: 42px auto 30px;
+    }
+}
+
+.avatar::after {
+    content: "";
+    width: 120px;
+    height: 120px;
+    background-image: url(../../images/profile-pic.jpg);
+    background-size: 120px 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

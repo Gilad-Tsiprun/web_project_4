@@ -1,0 +1,20 @@
+.input__text_type_occupation {
+    width: 358px;
+    margin: 30px auto 0;
+    padding: 0;
+    text-align: start;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: 0;
+}
+
+
+@media screen and (max-width: 980px) {
+    .input__text_type_occupation {
+        width: 238px;
+    }
+}

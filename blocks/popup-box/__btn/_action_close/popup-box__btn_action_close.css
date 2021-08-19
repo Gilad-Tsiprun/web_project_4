@@ -1,0 +1,23 @@
+.popup-box__btn_action_close {
+    position: absolute;
+    width: 28.75px;
+    height: 28.75px;
+    background-image: url(../../../../images/close.png);
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: 56.56px 56.56px;
+    background-position: center;
+    border: 0;
+    color: white;
+    padding: 0;
+    top: -33px;
+    right: -33px;
+}
+
+@media screen and (max-width: 980px) {
+    .popup-box__btn_action_close {
+        right: 10px;
+        width: 18.385px;
+        height: 18.385px;
+    }
+}
