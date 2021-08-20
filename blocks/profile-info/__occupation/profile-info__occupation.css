@@ -1,5 +1,6 @@
 .profile-info__occupation {
     margin: 0;
+    flex-basis: 100%;
     font-family: Inter, serif;
     font-style: normal;
     font-weight: normal;

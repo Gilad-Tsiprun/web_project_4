@@ -16,62 +16,61 @@
                 <div class="avatar"></div>
                 <div class="profile-info">
                     <h1 class="profile-info__full-name">Jacques Cousteau</h1>
-                    <button class="profile-info__edit opacity-med"></button>
-                    <div class="break"></div>
+                    <button class="profile-info__edit opacity"></button>
                     <p class="profile-info__occupation">Explorer</p>
                 </div>
-                <button class="add opacity-med"></button>
+                <button class="profile__add opacity"></button>
             </section>
 
             <section class="elements">
                 <ul class="elements__list">
                     <li class="element">
                         <img src="images/kirill-pershin-1.png" class="element__image" alt="element image 1">
-                        <p class="element__text">Yosemite Valley</p>
-                        <button class="element__like opacity-weak"></button>
+                        <h2 class="element__text">Yosemite Valley</h2>
+                        <button class="element__like"></button>
                     </li>
                     <li class="element">
                         <img src="images/kirill-pershin-2.png" class="element__image" alt="element image 2">
-                        <p class="element__text">Lake Louise</p>
-                        <button class="element__like opacity-weak"></button>
+                        <h2 class="element__text">Lake Louise</h2>
+                        <button class="element__like"></button>
                     </li>
                     <li class="element">
                         <img src="images/kirill-pershin-3.png" class="element__image" alt="element image 3">
-                        <p class="element__text">Bald Mountains</p>
-                        <button class="element__like opacity-weak"></button>
+                        <h2 class="element__text">Bald Mountains</h2>
+                        <button class="element__like"></button>
                     </li>
                     <li class="element">
                         <img src="images/kirill-pershin-4.png" class="element__image" alt="element image 4">
-                        <p class="element__text">Latemar</p>
-                        <button class="element__like opacity-weak"></button>
+                        <h2 class="element__text">Latemar</h2>
+                        <button class="element__like"></button>
                     </li>
                     <li class="element">
                         <img src="images/kirill-pershin-5.png" class="element__image" alt="element image 5">
-                        <p class="element__text">Vanoise National Park</p>
-                        <button class="element__like opacity-weak"></button>
+                        <h2 class="element__text">Vanoise National Park</h2>
+                        <button class="element__like"></button>
                     </li>
                     <li class="element">
                         <img src="images/kirill-pershin-6.png" class="element__image" alt="element image 6">
-                        <p class="element__text">Lago di Braies</p>
-                        <button class="element__like opacity-weak"></button>
+                        <h2 class="element__text">Lago di Braies</h2>
+                        <button class="element__like"></button>
                     </li>
                 </ul>
+            </section>       
+
+            <section class="popup-box">
+                <div class="popup__container">
+                    <button class="popup-box__action popup-box__action_close opacity"></button>
+                    <h2 class="popup-box__title">Edit Profile</h2>
+                    <form class="input" name="profile-form">
+                        <input type="text" placeholder="Name" class="input__text input__text_type_name" name="full-name">
+                        <input type="text" placeholder="About Me" class="input__text input__text_type_occupation" name="occupation">
+                        <button type="submit" class="popup-box__action popup-box__action_edit">
+                            Save
+                        </button>     
+                    </form>
+                </div>
             </section>
         </main>
-        
-        <div class="popup-box">
-            <button class="popup-box__btn popup-box__btn_action_close opacity-med"></button>
-            <p class="popup-box__title">Edit Profile</p>
-            <div class="input">
-                <input type="text" placeholder="Name" class="input__text input__text_type_name">
-                <hr class="input__line">
-                <input type="text" placeholder="About Me" class="input__text input__text_type_occupation">
-                <hr class="input__line">
-                <button class="popup-box__btn popup-box__btn_action_edit opacity-strong">
-                    Save
-                </button>
-            </div>
-        </div>
 
         <footer class="footer">
             <p class="footer__copyright">&copy; 2021 Around The U.S.</p>

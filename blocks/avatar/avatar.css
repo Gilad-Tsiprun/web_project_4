@@ -1,6 +1,7 @@
 .avatar {
     position: relative;
-    margin: 0 0 0 -22.5px;
+    margin: 0;
+    left: -22.5px;
     z-index: 0;
     width: 168.75px;
     height: 127.5px;

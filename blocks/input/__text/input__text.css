@@ -1,7 +1,7 @@
-.input__text_type_occupation {
-    width: 358px;
+.input__text {
     margin: 30px auto 0;
-    padding: 0;
+    padding: 0 0 13px 0;
+    width: 358px;
     text-align: start;
     font-family: Inter, serif;
     font-style: normal;
@@ -9,12 +9,18 @@
     font-size: 14px;
     line-height: 17px;
     color: #000000;
-    border: 0;
+    border-width: 1px;
+    border-style: none none solid none;
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
+.input__text:first-child {
+    margin: 0;
+}
 
 @media screen and (max-width: 980px) {
-    .input__text_type_occupation {
+    .input__text {
         width: 238px;
+        padding-bottom: 9px;
     }
 }

@@ -1,24 +1,8 @@
-function opacitySemiTransparent()
-{
-    document.querySelector('.header').style.opacity = "0.5";
-    document.querySelector('.main').style.opacity = "0.5";
-    document.querySelector('.footer').style.opacity = "0.5";
-}
-
-function opacityFull()
-{
-    document.querySelector('.header').style.opacity = "1";
-    document.querySelector('.main').style.opacity = "1";
-    document.querySelector('.footer').style.opacity = "1";
-}
-
-
 //Editing and saving profile section
 let popupBox = document.querySelector('.popup-box');
 let input = popupBox.querySelector('.input');
 let profile = document.querySelector('.profile');
 let profileInfo = profile.querySelector('.profile-info');
-let saveProfileBtn = document.querySelector('.popup-box__btn_action_edit');
 
 function editProfile(e) {
     e.preventDefault();
@@ -34,23 +18,21 @@ function editProfile(e) {
     closePopup();
 }
 
-saveProfileBtn.addEventListener('click', editProfile); 
+input.addEventListener('submit', editProfile); 
 
 //Opening and closing popup box section
 let editProfileBtn = document.querySelector('.profile-info__edit');
-let closePopupBtn = document.querySelector('.popup-box__btn_action_close');
+let closePopupBtn = document.querySelector('.popup-box__action_close');
 
 function closePopup()
 {
-    opacityFull();
-    popupBox.style.display = "none";
+    popupBox.classList.remove('popup-box_opened');
 }
 
 function openPopup()
 {
-    popupBox.style.display = "block";
+    popupBox.classList.add('popup-box_opened');
     
-    opacitySemiTransparent();
     let inputName = input.querySelector('.input__text_type_name');
     let inputOccupation = input.querySelector('.input__text_type_occupation');
     let name = profileInfo.querySelector('.profile-info__full-name').textContent;
