@@ -10,6 +10,7 @@
 @media screen and (max-width: 980px) {
     .avatar {
         margin: 42px auto 30px;
+        left: 0;
     }
 }
 
