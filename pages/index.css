@@ -20,8 +20,8 @@
 @import '../blocks/element/__text/element__text.css';
 @import '../blocks/footer/footer.css';
 @import '../blocks/footer/__copyright/footer__copyright.css';
-@import '../blocks/popup/__container/popup__container.css';
 @import '../blocks/popup-box/popup-box.css';
+@import '../blocks/popup-box/__container/popup-box__container.css';
 @import '../blocks/popup-box/_opened/popup-box_opened.css';
 @import '../blocks/popup-box/__title/popup-box__title.css';
 @import '../blocks/popup-box/__action/_close/popup-box__action_close.css';
