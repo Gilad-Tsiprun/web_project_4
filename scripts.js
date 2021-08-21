@@ -22,7 +22,7 @@ input.addEventListener('submit', editProfile);
 
 //Opening and closing popup box section
 let editProfileBtn = document.querySelector('.profile-info__edit');
-let closePopupBtn = document.querySelector('.popup-box__action_close');
+let closePopupBtn = document.querySelector('.popup-box__action_btn_close');
 
 function closePopup()
 {

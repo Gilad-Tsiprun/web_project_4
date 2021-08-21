@@ -1,4 +1,4 @@
-.popup-box__action_edit {
+.popup-box__action_btn_edit {
     background-color: black;
     padding: 0;
     width: 358px;
@@ -15,12 +15,12 @@
     cursor: pointer;
 }
 
-.popup-box__action_edit:hover {
+.popup-box__action_btn_edit:hover {
     opacity: 0.8;
 }
 
 @media screen and (max-width: 980px) {
-    .popup-box__action_edit {
+    .popup-box__action_btn_edit {
         margin: 46px auto 25px;
         width: 238px;
         height: 46px;

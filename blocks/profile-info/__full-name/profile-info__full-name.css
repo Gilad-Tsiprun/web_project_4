@@ -1,7 +1,7 @@
 .profile-info__full-name {
     margin: 0 0 16px;
     min-width: 0;
-    max-width: 443px;
+    max-width: 400px;
     font-family: Inter, serif;
     font-style: normal;
     font-weight: 500;
@@ -21,14 +21,14 @@
     }
 }
 
-@media screen and (min-width: 980px) and (max-width: 1024px) {
+@media screen and (min-width: 980px) and (max-width: 1096px) {
     .profile-info__full-name {
         font-size: 28px;
         line-height: 1.19;
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1125px) {
+@media screen and (min-width: 1096px) and (max-width: 1176px) {
     .profile-info__full-name {
         font-size: 36px;
         line-height: 1.17;

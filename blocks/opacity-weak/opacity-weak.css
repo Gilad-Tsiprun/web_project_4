@@ -1,8 +1,0 @@
-.opacity-weak {
-    opacity: 1;
-    transition: opacity 1s ease-in-out 0s;
-}
-
-.opacity-weak:hover {
-    opacity: 0.5;
-}

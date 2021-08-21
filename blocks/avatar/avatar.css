@@ -1,7 +1,6 @@
 .avatar {
     position: relative;
     margin: 0;
-    left: -22.5px;
     z-index: 0;
     width: 168.75px;
     height: 127.5px;
@@ -10,7 +9,6 @@
 @media screen and (max-width: 980px) {
     .avatar {
         margin: 42px auto 30px;
-        left: 0;
     }
 }
 

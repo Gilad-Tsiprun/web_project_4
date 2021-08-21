@@ -24,8 +24,8 @@
 @import '../blocks/popup-box/__container/popup-box__container.css';
 @import '../blocks/popup-box/_opened/popup-box_opened.css';
 @import '../blocks/popup-box/__title/popup-box__title.css';
-@import '../blocks/popup-box/__action/_close/popup-box__action_close.css';
-@import '../blocks/popup-box/__action/_edit/popup-box__action_edit.css';
+@import '../blocks/popup-box/__action/_btn/popup-box__action_btn_close.css';
+@import '../blocks/popup-box/__action/_btn/popup-box__action_btn_edit.css';
 @import '../blocks/input/input.css';
 @import '../blocks/input/__text/input__text.css';
 @import '../blocks/opacity/opacity.css';
