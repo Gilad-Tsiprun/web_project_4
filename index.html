@@ -22,49 +22,30 @@
             </section>
 
             <section class="elements">
-                <ul class="elements__list">
-                    <li class="element">
-                        <img src="images/kirill-pershin-1.png" class="element__image" alt="element image 1">
-                        <h2 class="element__text">Yosemite Valley</h2>
-                        <button type="button" class="element__like"></button>
-                    </li>
-                    <li class="element">
-                        <img src="images/kirill-pershin-2.png" class="element__image" alt="element image 2">
-                        <h2 class="element__text">Lake Louise</h2>
-                        <button type="button" class="element__like"></button>
-                    </li>
-                    <li class="element">
-                        <img src="images/kirill-pershin-3.png" class="element__image" alt="element image 3">
-                        <h2 class="element__text">Bald Mountains</h2>
-                        <button type="button" class="element__like"></button>
-                    </li>
-                    <li class="element">
-                        <img src="images/kirill-pershin-4.png" class="element__image" alt="element image 4">
-                        <h2 class="element__text">Latemar</h2>
-                        <button type="button" class="element__like"></button>
-                    </li>
-                    <li class="element">
-                        <img src="images/kirill-pershin-5.png" class="element__image" alt="element image 5">
-                        <h2 class="element__text">Vanoise National Park</h2>
-                        <button type="button" class="element__like"></button>
-                    </li>
-                    <li class="element">
-                        <img src="images/kirill-pershin-6.png" class="element__image" alt="element image 6">
-                        <h2 class="element__text">Lago di Braies</h2>
-                        <button type="button" class="element__like"></button>
-                    </li>
-                </ul>
+                <ul class="elements__list"></ul>
             </section>       
 
             <section class="popup-box">
-                <div class="popup-box__container">
+                <div class="popup-box__container popup-box__container_type_edit">
                     <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
                     <h2 class="popup-box__title">Edit Profile</h2>
-                    <form class="input" name="profile-form">
+                    <form class="input input_edit" name="profile-form">
                         <input type="text" placeholder="Name" class="input__text input__text_type_name" name="full-name">
                         <input type="text" placeholder="About Me" class="input__text input__text_type_occupation" name="occupation">
                         <button type="submit" class="popup-box__action popup-box__action_btn_edit">
                             Save
+                        </button>     
+                    </form>
+                </div>
+
+                <div class="popup-box__container popup-box__container_type_add">
+                    <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                    <h2 class="popup-box__title">New Place</h2>
+                    <form class="input input_add" name="element-form">
+                        <input type="text" placeholder="Title" class="input__text input__text_type_title" name="title">
+                        <input type="text" placeholder="Image URL" class="input__text input__text_type_image" name="image">
+                        <button type="submit" class="popup-box__action popup-box__action_btn_add">
+                            Create
                         </button>     
                     </form>
                 </div>
@@ -75,6 +56,14 @@
             <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
         </footer>
 
-        <script src="./scripts.js"></script>
+        <template id="element-template">
+            <li class="element">
+                <img class="element__image">
+                <h2 class="element__text"></h2>
+                <button type="button" class="element__like"></button>
+            </li>
+          </template>
+
+        <script src="./scripts.js" type="module"></script>
     </body>
 </html>
