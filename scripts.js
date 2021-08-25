@@ -59,16 +59,89 @@ const profile = document.querySelector('.profile');
 const profileInfo = profile.querySelector('.profile-info');
 const elementsContainer = document.querySelector(".elements__list");
 
+//Editing and saving profile section
+
+function editProfile(e) {
+  e.preventDefault();
+
+  let inputName = input.querySelector('.input__text_type_name').value;
+  let inputOccupation = input.querySelector('.input__text_type_occupation').value;
+  let name = profileInfo.querySelector('.profile-info__full-name');
+  let occupation = profileInfo.querySelector('.profile-info__occupation');
+
+  name.textContent = inputName;
+  occupation.textContent = inputOccupation;
+
+  closePopup();
+}
+
+inputEdit.addEventListener('submit', editProfile); 
+
+//Opening and closing popup box section
+let editProfileBtn = document.querySelector('.profile-info__edit');
+let addElementBtn = document.querySelector('.profile__add');
+let closePopupBtn = [...document.querySelectorAll('.popup-box__action_btn_close')];
+
+
+function closePopup()
+{
+  popupBox.classList.remove('popup-box_opened');
+  popupEdit.classList.remove('popup-box__container_opened');
+  popupAdd.classList.remove('popup-box__container_opened');
+}
+
+function openPopup()
+{
+  popupBox.classList.add('popup-box_opened');
+}
+
+function openPopupEdit()
+{
+  openPopup()
+  popupEdit.classList.add('popup-box__container_opened');
+  
+  let inputName = input.querySelector('.input__text_type_name');
+  let inputOccupation = input.querySelector('.input__text_type_occupation');
+  let name = profileInfo.querySelector('.profile-info__full-name').textContent;
+  let occupation = profileInfo.querySelector('.profile-info__occupation').textContent;
+
+  inputName.value = name;
+  inputOccupation.value = occupation;
+}
+
+function openPopupAdd()
+{
+  openPopup()
+  popupAdd.classList.add('popup-box__container_opened');
+}
+
+editProfileBtn.addEventListener('click', openPopupEdit);
+addElementBtn.addEventListener('click', openPopupAdd);
+closePopupBtn.forEach((closeBtn) => {
+closeBtn.addEventListener('click', closePopup);
+});
 
 function addCard(nameValue, srcValue)
 {
     const elementTemplate = document.querySelector("#element-template").content;
     const element = elementTemplate.querySelector('.element').cloneNode(true);
+    const closeBtn = element.querySelector(".popup-box__action_btn_close");
   
-    element.querySelector(".element__text").textContent = nameValue;
-    element.querySelector(".element__image").src = srcValue;  
+    element.querySelector(".element__text").textContent = nameValue; //element title
+    element.querySelector(".image-popup__background").src = srcValue; //popup image
+    element.querySelector(".element__image").src = srcValue; //element image
+    element.querySelector(".element__link").addEventListener("click", function (e) {
+      e.target.parentElement.nextElementSibling.classList.add("image-popup_opened"); //open image popup when pressing image
+    });
+    closeBtn.removeEventListener("click", closePopup);
+    closeBtn.addEventListener("click", function (e) {
+      e.target.parentElement.parentElement.classList.remove("image-popup_opened"); //close image popup button when pressing X
+    })
     element.querySelector(".element__like").addEventListener("click", function (e) {
-    e.target.classList.toggle("element__like_active");
+    e.target.classList.toggle("element__like_active"); //toggle like button
+    });
+    element.querySelector(".element__remove").addEventListener("click", function (e) { 
+      e.target.parentElement.remove(); //delete element
     });
 
     elementsContainer.prepend(element);
@@ -90,67 +163,7 @@ function addCard(nameValue, srcValue)
 
 inputAdd.addEventListener("submit", addElement);
 
-//Editing and saving profile section
 
-function editProfile(e) {
-    e.preventDefault();
-
-    let inputName = input.querySelector('.input__text_type_name').value;
-    let inputOccupation = input.querySelector('.input__text_type_occupation').value;
-    let name = profileInfo.querySelector('.profile-info__full-name');
-    let occupation = profileInfo.querySelector('.profile-info__occupation');
-
-    name.textContent = inputName;
-    occupation.textContent = inputOccupation;
-
-    closePopup();
-}
-
-inputEdit.addEventListener('submit', editProfile); 
-
-//Opening and closing popup box section
-let editProfileBtn = document.querySelector('.profile-info__edit');
-let addElementBtn = document.querySelector('.profile__add');
-let closePopupBtn = [...document.querySelectorAll('.popup-box__action_btn_close')];
-
-
-function closePopup()
-{
-    popupBox.classList.remove('popup-box_opened');
-    popupEdit.classList.remove('popup-box__container_opened');
-    popupAdd.classList.remove('popup-box__container_opened');
-}
-
-function openPopup()
-{
-  popupBox.classList.add('popup-box_opened');
-}
-
-function openPopupEdit()
-{
-    openPopup()
-    popupEdit.classList.add('popup-box__container_opened');
-    
-    let inputName = input.querySelector('.input__text_type_name');
-    let inputOccupation = input.querySelector('.input__text_type_occupation');
-    let name = profileInfo.querySelector('.profile-info__full-name').textContent;
-    let occupation = profileInfo.querySelector('.profile-info__occupation').textContent;
-
-    inputName.value = name;
-    inputOccupation.value = occupation;
-}
-
-function openPopupAdd()
-{
-  openPopup()
-  popupAdd.classList.add('popup-box__container_opened');
-}
-
-editProfileBtn.addEventListener('click', openPopupEdit);
-addElementBtn.addEventListener('click', openPopupAdd);
-closePopupBtn.forEach((closeBtn) => {
-  closeBtn.addEventListener('click', closePopup);
-});
 
 //adding initial cards
 function initCards()

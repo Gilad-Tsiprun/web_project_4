@@ -19,6 +19,7 @@
 @import '../blocks/element/__like/element__like.css';
 @import '../blocks/element/__like/_active/element__like_active.css';
 @import '../blocks/element/__text/element__text.css';
+@import '../blocks/element/__remove/element__remove.css';
 @import '../blocks/footer/footer.css';
 @import '../blocks/footer/__copyright/footer__copyright.css';
 @import '../blocks/popup-box/popup-box.css';
@@ -33,4 +34,8 @@
 @import '../blocks/popup-box/__action/_btn/popup-box__action_btn_add.css';
 @import '../blocks/input/input.css';
 @import '../blocks/input/__text/input__text.css';
+@import '../blocks/image-popup/image-popup.css';
+@import '../blocks/image-popup/_opened/image-popup_opened.css';
+@import '../blocks/image-popup/__container/image-popup__container.css';
+@import '../blocks/image-popup/__background/image-popup__background.css';
 @import '../blocks/opacity/opacity.css';

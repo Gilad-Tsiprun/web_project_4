@@ -1,4 +1,5 @@
-.element {   
+.element {
+    position: relative;
     width: 282px;
     display: flex;
     flex-wrap: wrap;

@@ -1,0 +1,6 @@
+.image-popup__container { 
+    position: relative;
+    z-index: 1;
+    width: 75vw;
+    height: 75vh;
+}

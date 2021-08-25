@@ -58,9 +58,18 @@
 
         <template id="element-template">
             <li class="element">
-                <img class="element__image">
+                <a class="element__link">
+                    <img class="element__image">
+                </a>
+                <div class="image-popup">
+                    <div class="image-popup__container">
+                        <img class="image-popup__background">
+                        <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                    </div>
+                </div>
                 <h2 class="element__text"></h2>
                 <button type="button" class="element__like"></button>
+                <button type="button" class="element__remove"></button>
             </li>
           </template>
 
