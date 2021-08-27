@@ -25,8 +25,8 @@
                 <ul class="elements__list"></ul>
             </section>       
 
-            <section class="popup-box">
-                <div class="popup-box__container popup-box__container_type_edit">
+            <section class="popup-box popup-box_type_edit">
+                <div class="popup-box__container">
                     <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
                     <h2 class="popup-box__title">Edit Profile</h2>
                     <form class="input input_edit" name="profile-form">
@@ -37,8 +37,10 @@
                         </button>     
                     </form>
                 </div>
+            </section>
 
-                <div class="popup-box__container popup-box__container_type_add">
+            <section class="popup-box popup-box_type_add">
+                <div class="popup-box__container">
                     <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
                     <h2 class="popup-box__title">New Place</h2>
                     <form class="input input_add" name="element-form">
@@ -48,6 +50,14 @@
                             Create
                         </button>     
                     </form>
+                </div>
+            </section>
+
+            <section class="popup-box popup-box_type_image">
+                <div class="image-popup__container">
+                    <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                    <img class="image-popup__background">
+                    <p class="image-popup__caption"></p>
                 </div>
             </section>
         </main>
@@ -61,12 +71,6 @@
                 <a class="element__link">
                     <img class="element__image">
                 </a>
-                <div class="image-popup">
-                    <div class="image-popup__container">
-                        <img class="image-popup__background">
-                        <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
-                    </div>
-                </div>
                 <h2 class="element__text"></h2>
                 <button type="button" class="element__like"></button>
                 <button type="button" class="element__remove"></button>

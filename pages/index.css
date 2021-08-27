@@ -38,4 +38,5 @@
 @import '../blocks/image-popup/_opened/image-popup_opened.css';
 @import '../blocks/image-popup/__container/image-popup__container.css';
 @import '../blocks/image-popup/__background/image-popup__background.css';
+@import '../blocks/image-popup/__caption/image-popup__caption.css';
 @import '../blocks/opacity/opacity.css';
