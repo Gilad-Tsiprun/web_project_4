@@ -11,7 +11,7 @@ const inputOccupation = inputEdit.querySelector('.input__text_type_occupation');
 const name = profileInfo.querySelector('.profile-info__full-name');
 const occupation = profileInfo.querySelector('.profile-info__occupation');
 const popupImage = document.querySelector('.popup-box_type_image');
-const popupImageSrc = document.querySelector('.image-popup__background');
+const popupImageSrc = document.querySelector('.popup-box__background');
 const elementTemplate = document.querySelector("#element-template").content;
 const title = document.querySelector(".input__text_type_title");
 const src = document.querySelector(".input__text_type_image");
@@ -74,7 +74,7 @@ function createCard(nameValue, srcValue)
   element.querySelector(".element__text").textContent = nameValue; //element title
   element.querySelector(".element__image").src = srcValue; //element image
   element.querySelector(".element__link").addEventListener("click", function (e) {
-    document.querySelector(".image-popup__caption").textContent = nameValue;
+    document.querySelector(".popup-box__caption").textContent = nameValue;
     popupImageSrc.src = srcValue; //popup image
     popupImage.classList.add("popup-box_opened"); //open image popup when pressing image
   });

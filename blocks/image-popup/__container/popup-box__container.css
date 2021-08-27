@@ -1,0 +1,7 @@
+.image-popup__container {
+    width: 75vw;
+    height: 75vh;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+}
