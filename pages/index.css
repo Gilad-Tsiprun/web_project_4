@@ -34,7 +34,6 @@
 @import '../blocks/popup-box/__action/_btn/popup-box__action_btn_add.css';
 @import '../blocks/input/input.css';
 @import '../blocks/input/__text/input__text.css';
-@import '../blocks/image-popup/image-popup.css';
 @import '../blocks/image-popup/_opened/image-popup_opened.css';
 @import '../blocks/image-popup/__container/image-popup__container.css';
 @import '../blocks/image-popup/__background/image-popup__background.css';
