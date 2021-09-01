@@ -1,4 +1,14 @@
 import { initialCards } from './scripts/initCards.js';
+import { enableValidation, resetValidation } from './scripts/validateForms.js';
+
+const formSettings = {
+  formSelector: ".input",
+  inputSelector: ".input__text",
+  submitButtonSelector: ".popup-box__action_submit",
+  inactiveButtonClass: "popup-box__action_submit_inactive",
+  inputErrorClass: "input__text_invalid",
+  errorClass: "input-error_active"
+};
 
 const popupEdit = document.querySelector(".popup-box_type_edit");
 const popupAdd = document.querySelector(".popup-box_type_add");
@@ -36,26 +46,52 @@ const addElementBtn = document.querySelector('.profile__add');
 const closePopupBtns = [...document.querySelectorAll('.popup-box__action_btn_close')];
 
 
+
 function closePopup(popupBox)
 {
   popupBox.classList.remove('popup-box_opened');
+  document.removeEventListener("keydown", closeOnEscape);
+}
+
+function closeOnEscape(e) 
+{
+  if (e.key === "Escape") { //ESC
+    closePopup(document.querySelector(".popup-box_opened"));
+  }
+}
+
+function closeOnOverlayClick(e) {
+  const openedPopup = document.querySelector(".popup-box_opened");
+  if (e.target === openedPopup)
+  {
+    closePopup(openedPopup);
+  }
 }
 
 function openPopup(popupBox)
 {
-  popupBox.classList.add('popup-box_opened')
+  document.addEventListener("keydown", closeOnEscape);
+  popupBox.addEventListener("click", closeOnOverlayClick);
+  popupBox.classList.add('popup-box_opened');
+
+  if(popupBox === popupAdd || popupBox === popupEdit) { //resetting the validation should only happen in form popups
+    resetValidation(popupBox.querySelector(".input"), popupBox.querySelectorAll(".input__text"), popupBox.querySelector(".popup-box__action_submit"), formSettings);
+  }
 }
 
 function openPopupEdit()
 {
-  openPopup(popupEdit);
-
   inputName.value = name.textContent;
   inputOccupation.value = occupation.textContent;
+
+  openPopup(popupEdit);
 }
 
 function openPopupAdd()
 {
+  title.value = "";
+  src.value = "";
+  
   openPopup(popupAdd);
 }
 
@@ -98,13 +134,10 @@ function prependCard(nameValue, srcValue)
   elementsContainer.prepend(createCard(nameValue, srcValue));
 }
 
- function addElement(e) {
+function addElement(e) {
   e.preventDefault();
 
   prependCard(title.value, src.value);
-
-  title.value = "";
-  src.value = "";
 
   closePopup(popupAdd);
 };
@@ -122,5 +155,7 @@ function initCards()
   });
 }
 
+
+enableValidation(formSettings);
 initCards();
 

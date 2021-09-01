@@ -1,0 +1,28 @@
+.popup-box__action_submit {
+    background-color: black;
+    padding: 0;
+    width: 358px;
+    height: 50.15px;
+    margin: 48px auto 36.5px;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease-in-out 0s;
+    cursor: pointer;
+}
+
+.popup-box__action_submit:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 980px) {
+    .popup-box__action_submit {
+        margin: 46px auto 25px;
+        width: 238px;
+        height: 46px;
+    }
+}

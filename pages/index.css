@@ -1,4 +1,3 @@
-
 @import '../vendor/normalize.css';
 @import '../fonts/inter.css';
 @import '../blocks/page/page.css';
@@ -31,11 +30,13 @@
 @import '../blocks/popup-box/__container//_type/popup-box__container_type_image.css';
 @import '../blocks/popup-box/__title/popup-box__title.css';
 @import '../blocks/popup-box/__action/_btn/popup-box__action_btn_close.css';
-@import '../blocks/popup-box/__action/_btn/popup-box__action_btn_edit.css';
-@import '../blocks/popup-box/__action/_btn/popup-box__action_btn_add.css';
+@import '../blocks/popup-box/__action/_submit/popup-box__action_submit.css';
+@import '../blocks/popup-box/__action/_submit/popup-box__action_submit_inactive.css';
 @import '../blocks/popup-box/_opened/popup-box_opened.css';
 @import '../blocks/popup-box/__background/popup-box__background.css';
 @import '../blocks/popup-box/__caption/popup-box__caption.css';
 @import '../blocks/input/input.css';
+@import '../blocks/input-error/input-error.css';
 @import '../blocks/input/__text/input__text.css';
+@import '../blocks/input/__text/_invalid/input__text_invalid.css';
 @import '../blocks/opacity/opacity.css';

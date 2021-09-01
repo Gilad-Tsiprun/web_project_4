@@ -30,9 +30,11 @@
                     <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
                     <h2 class="popup-box__title">Edit Profile</h2>
                     <form class="input input_edit" name="profile-form">
-                        <input type="text" placeholder="Name" class="input__text input__text_type_name" name="full-name">
-                        <input type="text" placeholder="About Me" class="input__text input__text_type_occupation" name="occupation">
-                        <button type="submit" class="popup-box__action popup-box__action_btn_edit">
+                        <input type="text" placeholder="Name" class="input__text input__text_type_name" id="full-name-input" name="full-name" required minlength="2" maxLength="40">
+                        <span class="input-error full-name-input-error"></span>
+                        <input type="text" placeholder="About Me" class="input__text input__text_type_occupation" id="about-me-input" name="occupation" required minlength="2" maxLength="200">
+                        <span class="input-error about-me-input-error"></span>
+                        <button type="submit" class="popup-box__action popup-box__action_btn_edit popup-box__action_submit">
                             Save
                         </button>     
                     </form>
@@ -44,9 +46,11 @@
                     <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
                     <h2 class="popup-box__title">New Place</h2>
                     <form class="input input_add" name="element-form">
-                        <input type="text" placeholder="Title" class="input__text input__text_type_title" name="title">
-                        <input type="text" placeholder="Image URL" class="input__text input__text_type_image" name="image">
-                        <button type="submit" class="popup-box__action popup-box__action_btn_add">
+                        <input type="text" placeholder="Title" class="input__text input__text_type_title" id="title-input" name="title" required minlength="1" maxLength="30">
+                        <span class="input-error title-input-error"></span>
+                        <input type="url" placeholder="Image URL" class="input__text input__text_type_image" id="url-input" name="image" required>
+                        <span class="input-error url-input-error"></span>
+                        <button type="submit" class="popup-box__action popup-box__action_btn_add popup-box__action_submit">
                             Create
                         </button>     
                     </form>
