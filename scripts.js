@@ -1,5 +1,5 @@
 import { initialCards } from './scripts/initCards.js';
-import { enableValidation, resetValidation } from './scripts/validateForms.js';
+import { enableValidation, resetValidation } from './scripts/validate.js';
 
 const formSettings = {
   formSelector: ".input",
