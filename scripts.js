@@ -51,6 +51,7 @@ function closePopup(popupBox)
 {
   popupBox.classList.remove('popup-box_opened');
   document.removeEventListener("keydown", closeOnEscape);
+  popupBox.removeEventListener("click", closeOnOverlayClick);
 }
 
 function closeOnEscape(e) 
