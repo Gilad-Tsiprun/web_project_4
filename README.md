@@ -9,7 +9,7 @@
 
 **Description**
 
-"Around The U.S." is an interactive page where users can add, remove, or like photos. Created with Responsive design in mind, working on both mobile devices and desktop, using CSS's Flexbox and Media Queries, HTML Forms, BEM Methodology and JavaScript DOM.
+"Around The U.S." is an interactive page where users can add, remove, or like photos. Created with Responsive design in mind, working on both mobile devices and desktop, using CSS's Flexbox and Media Queries, HTML Forms, BEM Methodology, JavaScript DOM, Modules, and OOP principles.
 
 **Figma**
 
