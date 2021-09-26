@@ -1,23 +1,10 @@
 import { initialCards } from './initCards.js';
 import Card  from './Card.js';
-import FormValidator from './FormValidator.js';
-import { closePopup, openPopup } from './utilities.js';
+import { closePopup, openPopup, editValidator, inputAdd, addValidator, inputEdit } from './utilities.js';
 
-const formSettings = {
-  formSelector: ".input",
-  inputSelector: ".input__text",
-  submitButtonSelector: ".popup-box__action_submit",
-  inactiveButtonClass: "popup-box__action_submit_inactive",
-  inputErrorClass: "input__text_invalid",
-  errorClass: "input-error_active"
-};
 
 const popupEdit = document.querySelector(".popup-box_type_edit");
 const popupAdd = document.querySelector(".popup-box_type_add");
-const inputEdit = document.querySelector('.input_edit');
-export const editValidator = new FormValidator(formSettings, inputEdit);
-const inputAdd = document.querySelector('.input_add');
-export const addValidator = new FormValidator(formSettings, inputAdd);
 const profile = document.querySelector('.profile');
 const profileInfo = profile.querySelector('.profile-info');
 const elementsContainer = document.querySelector(".elements__list");
@@ -58,6 +45,8 @@ function openPopupEdit()
   inputName.value = name.textContent;
   inputOccupation.value = occupation.textContent;
 
+  editValidator.resetValidation();
+
   openPopup(popupEdit);
 }
 
@@ -65,6 +54,8 @@ function openPopupAdd()
 {
   place.value = "";
   src.value = "";
+
+  addValidator.resetValidation();
   
   openPopup(popupAdd);
 }
@@ -78,18 +69,23 @@ closePopupBtns.forEach((closeBtn) => {
   }); 
 });
 
-function prependCard(data, elementTemplateSelector)
-{
-  const newCardElement = new Card(data, elementTemplateSelector);
-  elementsContainer.prepend(newCardElement.generateCard());
+function createCard(data, templateSelector) {
+  const card = new Card(data, templateSelector);
+
+  return card;
+}
+
+function prependCard(card) {
+  elementsContainer.prepend(card.generateCard());
 }
 
 function addElement(e) {
   e.preventDefault();
   
   const data = {title: place.value, image: src.value}
+  const newCardElement = createCard(data, elementTemplateSelector)
 
-  prependCard(data, elementTemplateSelector);
+  prependCard(newCardElement);
 
   closePopup(popupAdd);
 };
@@ -103,7 +99,8 @@ function initCards()
 {
   initialCards.forEach((element) =>
   {
-    prependCard(element, elementTemplateSelector);
+    const initialCard = createCard(element, elementTemplateSelector);
+    prependCard(initialCard);
   });
 }
 

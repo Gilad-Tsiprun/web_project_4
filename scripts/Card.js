@@ -39,6 +39,7 @@ class Card {
     this._setEventListeners(); // call the _setEventListeners
   
     this._element.querySelector(".element__image").src = this._image;
+    this._element.querySelector(".element__image").alt = this._title; 
     this._element.querySelector(".element__text").textContent = this._title;
   
     return this._element;
