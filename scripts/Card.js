@@ -35,11 +35,12 @@ class Card {
   
   generateCard() {
     this._element = this._cardTemplate.cloneNode(true);
+    this._elementImage = this._element.querySelector(".element__image");
 
     this._setEventListeners(); // call the _setEventListeners
   
-    this._element.querySelector(".element__image").src = this._image;
-    this._element.querySelector(".element__image").alt = this._title; 
+    this._elementImage.src = this._image;
+    this._elementImage.alt = this._title; 
     this._element.querySelector(".element__text").textContent = this._title;
   
     return this._element;
