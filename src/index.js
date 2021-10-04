@@ -1,3 +1,4 @@
+import "./styles/index.css";
 import { initialCards } from './scripts/initCards.js';
 import Card  from './scripts/Card.js';
 import { closePopup, openPopup, editValidator, inputAdd, addValidator, inputEdit } from './scripts/utilities.js';

@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Around The U.S</title>
-        <link rel="stylesheet" href="./pages/index.css">
+        <!-- <link rel="stylesheet" href="./styles/index.css"> -->
     </head>
     <body class="page">  
         <header class="header">
-            <img src="./images/logo.svg" class="logo" alt="Around the U.S Logo">
+            <img src="<%=require('./images/logo.svg')%>" class="logo" alt="Around the U.S Logo">
         </header>
             <main class="main">
             <section class="profile">
@@ -60,7 +60,7 @@
             <section class="popup-box popup-box_type_image">
                 <div class="popup-box__container popup-box__container_type_image">
                     <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
-                    <img class="popup-box__background" alt="overlay" src="./images/kirill-pershin-1.png">
+                    <img class="popup-box__background" alt="overlay" src="<%=require('./images/kirill-pershin-1.png')%>">
                     <p class="popup-box__caption"></p>
                 </div>
             </section>
