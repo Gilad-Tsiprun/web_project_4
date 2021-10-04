@@ -1,0 +1,27 @@
+{
+  "name": "web_project_4",
+  "version": "1.0.0",
+  "description": "* Description\r * Figma\r * Github\r * Images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "del -rf dist && webpack",
+    "dev": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phoenix801/web_project_4.git"
+  },
+  "author": "Gilad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenix801/web_project_4/issues"
+  },
+  "homepage": "https://github.com/Phoenix801/web_project_4#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^5.56.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  }
+}
