@@ -21,13 +21,6 @@ class Card {
     e.target.parentElement.remove(); //delete element
   }
 
-  _handleOpenImage() {
-    popupCaption.textContent = this._title; //popup caption
-    popupImageSrc.src = this._image; //popup image
-    popupImageSrc.alt = this._title; //popup alternative text
-    openPopup(popupImage); //open image popup when pressing image
-  }
-
   _setEventListeners() {
     this._element.querySelector(".element__like").addEventListener("click", (e) => this._handleLike(e)); //toggle like
     this._element.querySelector(".element__remove").addEventListener("click", (e) => this._handleRemove(e)); //delete element
