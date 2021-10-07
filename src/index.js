@@ -61,16 +61,15 @@ addElementBtn.addEventListener('click', openPopupAdd);
 function createCard(data, templateSelector) {
   const card = new Card(data, templateSelector, () => imagePopupModal.open(data));
 
-  return card;
+  return card.generateCard();
 }
 
 const initCards = new Section({
   items: initialCards, 
   renderer: (item) => {
     const card = createCard(item, elementTemplateSelector);
-    const cardElement = card.generateCard();
 
-    initCards.addItem(cardElement);
+    initCards.addItem(card);
   }
 }, ".elements__list")
 
@@ -78,10 +77,9 @@ initCards.renderItems();
 
 const imagePopupModal = new PopupWithImage(".popup-box_type_image")
 const addCardModal = new PopupWithForm(".popup-box_type_add", (data) => {  
-  const newCard = createCard(data, elementTemplateSelector)
-  const cardToInsert = newCard.generateCard();
+const newCard = createCard(data, elementTemplateSelector)
 
-  initCards.addItem(cardToInsert);
+  initCards.addItem(newCard);
   closePopup(popupAdd);
 });
 const editProfiledModal = new PopupWithForm(".popup-box_type_edit", (data) => {
