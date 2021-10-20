@@ -52,6 +52,8 @@ editValidator.enableValidation();
 addValidator.enableValidation();
 avatarValidator.enableValidation();
 
+console.log(addValidator)
+
 //Editing and saving profile section
 
 const userInfo = new UserInfo({ nameSelector: '.profile-info__full-name', occupationSelector: '.profile-info__occupation', avatarSelector: '.avatar__image' });

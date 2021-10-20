@@ -14,7 +14,6 @@
 
 .avatar:hover .avatar__edit {
     opacity: 1;
-    background-image: none;
     background-repeat: no-repeat;
     background-size: 26px 26px;
     background-position: center;
