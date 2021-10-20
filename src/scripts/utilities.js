@@ -18,16 +18,16 @@ const inputEdit = document.querySelector('.input_edit');
 const editValidator = new FormValidator(formSettings, inputEdit);
 const inputAdd = document.querySelector('.input_add');
 const addValidator = new FormValidator(formSettings, inputAdd);
+const inputAvatar = document.querySelector('.input_edit-avatar');
+const avatarValidator = new FormValidator(formSettings, inputAvatar);
 
-function closePopup(popupBox)
-{
+function closePopup(popupBox) {
   popupBox.classList.remove('popup-box_opened');
   document.removeEventListener("keydown", closeOnEscape);
   popupBox.removeEventListener("click", closeOnOverlayClick);
 }
 
-function closeOnEscape(e) 
-{
+function closeOnEscape(e) {
   if (e.key === "Escape") { //ESC
     closePopup(document.querySelector(".popup-box_opened"));
   }
@@ -35,8 +35,7 @@ function closeOnEscape(e)
 
 function closeOnOverlayClick(e) {
   const openedPopup = document.querySelector(".popup-box_opened");
-  if (e.target === openedPopup)
-  {
+  if (e.target === openedPopup) {
     closePopup(openedPopup);
   }
 }
@@ -47,4 +46,4 @@ function openPopup(popupBox) {
   popupBox.classList.add('popup-box_opened');
 }
 
-export { popupImage, popupImageSrc, popupCaption, popupAdd, popupEdit, addValidator, editValidator, inputAdd, inputEdit, formSettings, closePopup, openPopup };
+export { popupImage, popupImageSrc, popupCaption, popupAdd, popupEdit, addValidator, editValidator, avatarValidator, inputAdd, inputEdit, formSettings, closePopup, openPopup };

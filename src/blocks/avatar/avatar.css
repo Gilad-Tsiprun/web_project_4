@@ -1,10 +1,13 @@
 .avatar {
     position: relative;
     margin: 0;
-    z-index: 0;
-    width: 168.75px;
-    height: 127.5px;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    transition: opacity 1s ease-in-out 0s;
+    opacity: 1;
 }
+
 
 @media screen and (max-width: 980px) {
     .avatar {
@@ -12,15 +15,19 @@
     }
 }
 
-.avatar::after {
+/*.avatar::after {
     content: "";
     width: 120px;
     height: 120px;
-    background-image: url(../../images/profile-pic.jpg);
-    background-size: 120px 120px;
+    background-image: url(../../images/edit-avatar.png);
+    background-color: black;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
+    background-position: center;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+}*/

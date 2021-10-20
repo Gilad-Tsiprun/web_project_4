@@ -1,86 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>  
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Around The U.S</title>
-        <!-- <link rel="stylesheet" href="./styles/index.css"> -->
-    </head>
-    <body class="page">  
-        <header class="header">
-            <img src="<%=require('./images/logo.svg')%>" class="logo" alt="Around the U.S Logo">
-        </header>
-            <main class="main">
-            <section class="profile">
-                <div class="avatar"></div>
-                <div class="profile-info">
-                    <h1 class="profile-info__full-name">Jacques Cousteau</h1>
-                    <button type="button" class="profile-info__edit opacity"></button>
-                    <p class="profile-info__occupation">Explorer</p>
-                </div>
-                <button type="button" class="profile__add opacity"></button>
-            </section>
 
-            <section class="elements">
-                <ul class="elements__list"></ul>
-            </section>       
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Around The U.S</title>
+    <!-- <link rel="stylesheet" href="./styles/index.css"> -->
+</head>
 
-            <section class="popup-box popup-box_type_edit">
-                <div class="popup-box__container">
-                    <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
-                    <h2 class="popup-box__title">Edit Profile</h2>
-                    <form class="input input_edit" name="profile-form">
-                        <input type="text" placeholder="Name" class="input__text input__text_type_name" id="full-name-input" name="name" required minlength="2" maxlength="40">
-                        <span class="input-error full-name-input-error"></span>
-                        <input type="text" placeholder="About Me" class="input__text input__text_type_occupation" id="about-me-input" name="occupation" required minlength="2" maxlength="200">
-                        <span class="input-error about-me-input-error"></span>
-                        <button type="submit" class="popup-box__action popup-box__action_btn_edit popup-box__action_submit">
-                            Save
-                        </button>     
-                    </form>
-                </div>
-            </section>
+<body class="page">
+    <header class="header">
+        <img src="<%=require('./images/logo.svg')%>" class="logo" alt="Around the U.S Logo">
+    </header>
+    <main class="main">
+        <section class="profile">
+            <div class="avatar">
+                <image class="avatar__image" src="<%=require('./images/profile-pic.jpg')%>" alt="profile picture">
+                </image>
+                <button type="button" class="avatar__edit"></button>
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-info__full-name"></h1>
+                <button type="button" class="profile-info__edit opacity"></button>
+                <p class="profile-info__occupation"></p>
+            </div>
+            <button type="button" class="profile__add opacity"></button>
+        </section>
 
-            <section class="popup-box popup-box_type_add">
-                <div class="popup-box__container">
-                    <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
-                    <h2 class="popup-box__title">New Place</h2>
-                    <form class="input input_add" name="element-form">
-                        <input type="text" placeholder="Title" class="input__text input__text_type_title" id="title-input" name="title" required minlength="1" maxlength="30">
-                        <span class="input-error title-input-error"></span>
-                        <input type="url" placeholder="Image URL" class="input__text input__text_type_image" id="url-input" name="image" required>
-                        <span class="input-error url-input-error"></span>
-                        <button type="submit" class="popup-box__action popup-box__action_btn_add popup-box__action_submit">
-                            Create
-                        </button>     
-                    </form>
-                </div>
-            </section>
+        <section class="elements">
+            <ul class="elements__list"></ul>
+        </section>
 
-            <section class="popup-box popup-box_type_image">
-                <div class="popup-box__container popup-box__container_type_image">
-                    <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
-                    <img class="popup-box__background" alt="overlay" src="<%=require('./images/kirill-pershin-1.png')%>">
-                    <p class="popup-box__caption"></p>
-                </div>
-            </section>
-        </main>
+        <section class="popup-box popup-box_type_edit">
+            <div class="popup-box__container">
+                <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                <h2 class="popup-box__title">Edit Profile</h2>
+                <form class="input input_edit" name="profile-form">
+                    <input type="text" placeholder="Name" class="input__text input__text_type_full-name"
+                        id="full-name-input" name="fullName" required minlength="2" maxlength="40">
+                    <span class="input-error full-name-input-error"></span>
+                    <input type="text" placeholder="About Me" class="input__text input__text_type_occupation"
+                        id="about-me-input" name="occupation" required minlength="2" maxlength="200">
+                    <span class="input-error about-me-input-error"></span>
+                    <button type="submit" class="popup-box__action popup-box__action_btn_edit popup-box__action_submit">
+                        Save
+                    </button>
+                </form>
+            </div>
+        </section>
 
-        <footer class="footer">
-            <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
-        </footer>
 
-        <template id="element-template">
-            <li class="element">
-                <a class="element__link">
-                    <img class="element__image">
-                </a>
-                <h2 class="element__text"></h2>
+        <section class="popup-box popup-box_type_edit-avatar">
+            <div class="popup-box__container">
+                <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                <h2 class="popup-box__title">Change profile picture</h2>
+                <form class="input input_edit-avatar" name="element-form">
+                    <input type="url" placeholder="Image URL" class="input__text input__text_type_image" id="url-input"
+                        name="image" required>
+                    <span class="input-error url-input-error"></span>
+                    <button type="submit"
+                        class="popup-box__action popup-box__action_btn_edit-avatar popup-box__action_submit">
+                        Save
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="popup-box popup-box_type_add">
+            <div class="popup-box__container">
+                <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                <h2 class="popup-box__title">New Place</h2>
+                <form class="input input_edit-avatar" name="element-form">
+                    <input type="text" placeholder="Title" class="input__text input__text_type_name" id="name-input"
+                        name="name" required minlength="1" maxlength="30">
+                    <span class="input-error name-input-error"></span>
+                    <input type="url" placeholder="Image URL" class="input__text input__text_type_link" id="url-input"
+                        name="link" required>
+                    <span class="input-error url-input-error"></span>
+                    <button type="submit" class="popup-box__action popup-box__action_btn_add popup-box__action_submit">
+                        Create
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="popup-box popup-box_type_remove">
+            <div class="popup-box__container">
+                <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                <h2 class="popup-box__title">Are you sure?</h2>
+                <form class="input input_add" name="element-form">
+                    <button type="submit"
+                        class="popup-box__action popup-box__action_btn_remove popup-box__action_submit">
+                        Yes
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="popup-box popup-box_type_image">
+            <div class="popup-box__container popup-box__container_type_image">
+                <button type="button" class="popup-box__action popup-box__action_btn_close opacity"></button>
+                <img class="popup-box__background" alt="overlay" src="<%=require('./images/kirill-pershin-1.png')%>">
+                <p class="popup-box__caption"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
+    </footer>
+
+    <template id="element-template">
+        <li class="element">
+            <a class="element__link">
+                <img class="element__image">
+            </a>
+            <h2 class="element__text"></h2>
+            <div class="element__like-container">
                 <button type="button" class="element__like"></button>
-                <button type="button" class="element__remove"></button>
-            </li>
-          </template>
+                <p class="element__like-count"></p>
+            </div>
+            <button type="button" class="element__remove"></button>
+        </li>
+    </template>
+</body>
 
-        <script src="./index.js" type="module"></script>
-    </body>
 </html>

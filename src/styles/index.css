@@ -10,12 +10,16 @@
 @import '../blocks/profile-info/__occupation/profile-info__occupation.css';
 @import '../blocks/profile-info/__edit/profile-info__edit.css';
 @import '../blocks/avatar/avatar.css';
+@import '../blocks/avatar/__image/avatar__image.css';
+@import '../blocks/avatar/__edit/avatar__edit.css';
 @import '../blocks/profile/__add/profile__add.css';
 @import '../blocks/elements/elements.css';
 @import '../blocks/elements/__list/elements__list.css';
 @import '../blocks/element/element.css';
 @import '../blocks/element/__image/element__image.css';
+@import '../blocks/element/__like-container/element__like-container.css';
 @import '../blocks/element/__like/element__like.css';
+@import '../blocks/element/__like-count/element__like-count.css';
 @import '../blocks/element/__like/_active/element__like_active.css';
 @import '../blocks/element/__text/element__text.css';
 @import '../blocks/element/__remove/element__remove.css';
