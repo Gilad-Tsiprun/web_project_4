@@ -1,5 +1,3 @@
-import { openPopup, popuplink, popuplinkSrc, popupCaption } from './utilities.js';
-
 class Card {
   constructor(data, templateCardSelector, handleCardClick, handleRemove, handleLike, userId) {
     this._name = data.name;
@@ -19,25 +17,22 @@ class Card {
       .querySelector(".element"); //card template
   }
 
-  /*_handleLike(e) {
-    const likeBtn = e.target;
-    if (likeBtn.classList.contains("element__like_active")) {
-      likeBtn.classList.remove("element__like_active"); //remove like button
-      this._likes
-    }
-  }*/
-
   removeCard() {
     this._element.remove(); //delete element
 
     this._element = null;
   }
 
-  toggleLike = (updatedLikes) => {
-    this._likeBtn.classList.toggle("element__like_active")
-
+  renderLikes = (updatedLikes) => {
     this._likes = updatedLikes;
     this._updateLikesCount();
+
+    if (this.isLikedByUser()) {
+      this._likeBtn.classList.add("element__like_active")
+    }
+    else {
+      this._likeBtn.classList.remove("element__like_active")
+    }
   }
 
   isLikedByUser() {
@@ -73,12 +68,7 @@ class Card {
 
 
 
-    this._updateLikesCount();
-
-    if (this.isLikedByUser()) {
-      this._likeBtn.classList.add("element__like_active")
-    }
-
+    this.renderLikes(this._likes);
 
     return this._element;
   }

@@ -1,12 +1,13 @@
-import "./styles/index.css";
-import Card from './scripts/Card.js';
-import { closePopup, openPopup, editValidator, addValidator, avatarValidator, inputEdit } from './scripts/utilities.js';
-import PopupWithImage from './scripts/PopupWithImage.js';
-import PopupWithForm from './scripts/PopupWithForm.js';
-import PopupWithSubmit from './scripts/PopupWithSubmit.js'
-import Section from './scripts/Section.js';
-import UserInfo from './scripts/UserInfo.js';
-import { Api } from "./scripts/API.js";
+import "./index.css";
+import Card from '../scripts/Card.js';
+import { closePopup, openPopup } from '../utils/utilities.js';
+import { editValidator, addValidator, avatarValidator, inputEdit, inputAdd } from '../utils/constants.js';
+import PopupWithImage from '../scripts/PopupWithImage.js';
+import PopupWithForm from '../scripts/PopupWithForm.js';
+import PopupWithSubmit from '../scripts/PopupWithSubmit.js'
+import Section from '../scripts/Section.js';
+import UserInfo from '../scripts/UserInfo.js';
+import { Api } from "../scripts/API.js";
 
 
 
@@ -27,7 +28,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
     userInfo.setUserInfo({ fullName: userData.name, occupation: userData.about });
     userInfo.setUserAvatar(userData.avatar);
     userId = userData._id;
-    initCards.renderItems(cards);
+    cardList.renderItems(cards);
   })
   .catch((err) => {
     console.log(err); // log the error to the console
@@ -41,18 +42,11 @@ const inputName = inputEdit.querySelector('.input__text_type_full-name');
 const inputOccupation = inputEdit.querySelector('.input__text_type_occupation');
 const inputAvatar = document.querySelector('.input__text_type_image');
 const elementTemplateSelector = "#element-template";
-const place = document.querySelector(".input__text_type_name");
-const src = document.querySelector(".input__text_type_link");
-
-
-
 
 //Enabling Form Validation on the profile edit and add card
 editValidator.enableValidation();
 addValidator.enableValidation();
 avatarValidator.enableValidation();
-
-console.log(addValidator)
 
 //Editing and saving profile section
 
@@ -84,8 +78,7 @@ function openPopupEditAvatar() {
 }
 
 function openPopupAdd() {
-  place.value = "";
-  src.value = "";
+  inputAdd.reset();
 
   addValidator.resetValidation();
 
@@ -95,9 +88,6 @@ function openPopupAdd() {
 editProfileBtn.addEventListener('click', openPopupEdit);
 addElementBtn.addEventListener('click', openPopupAdd);
 editAvatarBtn.addEventListener('click', openPopupEditAvatar);
-
-
-
 
 //cards logic
 function createCard(data, templateSelector) {
@@ -120,14 +110,14 @@ function createCard(data, templateSelector) {
     (id) => {
       if (!card.isLikedByUser()) {
         api.likeCard(id)
-          .then((res) => card.toggleLike(res.likes))
+          .then((res) => card.renderLikes(res.likes))
           .catch((err) => {
             console.log(err); // log the error to the console
           });
       }
       else {
         api.unlikeCard(id)
-          .then((res) => card.toggleLike(res.likes))
+          .then((res) => card.renderLikes(res.likes))
           .catch((err) => {
             console.log(err); // log the error to the console
           });
@@ -138,11 +128,11 @@ function createCard(data, templateSelector) {
   return card.generateCard();
 }
 
-const initCards = new Section({
+const cardList = new Section({
   renderer: (item) => {
     const card = createCard(item, elementTemplateSelector);
 
-    initCards.addItem(card);
+    cardList.addItem(card);
   }
 }, ".elements__list")
 
@@ -156,13 +146,13 @@ const addCardModal = new PopupWithForm(".popup-box_type_add", (data) => {
     .then(res => {
       const newCard = createCard(res, elementTemplateSelector)
 
-      initCards.addItem(newCard);
+      cardList.addItem(newCard);
       closePopup(popupAdd);
     })
-    .then(() => addCardModal.onLoadFinish())
     .catch((err) => {
       console.log(err); // log the error to the console
-    });
+    })
+    .finally(() => addCardModal.onLoadFinish());
 });
 const editProfileModal = new PopupWithForm(".popup-box_type_edit", (data) => {
   editProfileModal.showLoadingProgress();
@@ -172,10 +162,10 @@ const editProfileModal = new PopupWithForm(".popup-box_type_edit", (data) => {
 
       closePopup(popupEdit);
     })
-    .then(() => editProfileModal.onLoadFinish())
     .catch((err) => {
       console.log(err); // log the error to the console
-    });
+    })
+    .finally(() => editProfileModal.onLoadFinish());
 });
 const editAvatarModal = new PopupWithForm(".popup-box_type_edit-avatar", (data) => {
   editAvatarModal.showLoadingProgress();
@@ -185,10 +175,10 @@ const editAvatarModal = new PopupWithForm(".popup-box_type_edit-avatar", (data) 
 
       closePopup(popupAvatar);
     })
-    .then(() => editAvatarModal.onLoadFinish())
     .catch((err) => {
       console.log(err); // log the error to the console
-    });
+    })
+    .finally(() => editAvatarModal.onLoadFinish());
 });
 
 imagePopupModal.setEventListeners();
