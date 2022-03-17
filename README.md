@@ -17,8 +17,8 @@
 
 **Github**
 
-* [Link to my project on Github](https://phoenix801.github.io/web_project_4/)
+* [Link to my project on Github](https://gilad-tsiprun.github.io/web_project_4/)
 
 **Images**
 
-![Around The U.S - Sprint 4 Desktop + Mobile](https://github.com/Phoenix801/web_project_4/blob/main/images/Sprint%204_%20Around%20The%20U.S.%20_%20desktop%20%2B%20mobile.png)
+![Around The U.S - Sprint 4 Desktop + Mobile](https://github.com/gilad-tsiprun/web_project_4/blob/main/images/Sprint%204_%20Around%20The%20U.S.%20_%20desktop%20%2B%20mobile.png)
