@@ -21,4 +21,4 @@
 
 **Images**
 
-![Around The U.S - Sprint 4 Desktop + Mobile](https://github.com/gilad-tsiprun/web_project_4/blob/main/images/Sprint%204_%20Around%20The%20U.S.%20_%20desktop%20%2B%20mobile.png)
+![Around The U.S - Sprint 4 Desktop + Mobile](https://github.com/Gilad-Tsiprun/web_project_4/blob/main/images/Sprint%204_%20Around%20The%20U.S.%20_%20desktop%20%2B%20mobile.png)
